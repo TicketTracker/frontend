@@ -1,14 +1,15 @@
 <template>
   <div class="projects">
     <div class="container">
-    <h3>All projects:</h3>
+      <h3 id="header">All projects:</h3>
+      <button id="add-project">Add Project</button>
       <div class="list-group">
-        <a v-for="p in projects" :key="p._id" href="#" class="list-group-item list-group-item-action">
+        <router-link v-for="p in projects" :key="p._id" :to="'/project/'+p._id" class="list-group-item list-group-item-action">
           <div>
             <h4>{{p.name}}</h4>
             <p>{{p.description}}</p>
           </div>
-        </a>
+        </router-link>
       </div>
     </div>
   </div>
@@ -39,5 +40,12 @@ export default {
 <style scoped>
 .projects {
   margin-top: 1.5em;
+}
+#header {
+  padding-left: 0.2em;
+  display: inline;
+}
+#add-project {
+  float: right;
 }
 </style>

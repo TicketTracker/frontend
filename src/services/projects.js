@@ -10,4 +10,7 @@ export default class ProjectService {
   getAllProjects() {
     return requester.get('/projects')
   }
+  getOneProject(id) {
+    return requester.get(`/projects/${id}`)
+  }
 }
