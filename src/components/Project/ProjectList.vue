@@ -1,8 +1,10 @@
 <template>
   <div class="projects">
     <div class="container">
-      <h3 id="header">All projects:</h3>
-      <button id="add-project">Add Project</button>
+      <div class="header">
+        <h3>All projects:</h3>
+        <router-link :to="'/add-project'" class="btn btn-info" id="add-project" role="button">Add Project</router-link>
+      </div>
       <div class="list-group">
         <router-link v-for="p in projects" :key="p._id" :to="'/project/'+p._id" class="list-group-item list-group-item-action">
           <div>
@@ -41,9 +43,8 @@ export default {
 .projects {
   margin-top: 1.5em;
 }
-#header {
-  padding-left: 0.2em;
-  display: inline;
+.header > h3 {
+  margin-bottom: 1em;
 }
 #add-project {
   float: right;

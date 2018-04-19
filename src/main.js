@@ -8,17 +8,22 @@ import VueRouter from 'vue-router'
 //components
 import ProjectList from "./components/Project/ProjectList"
 import ProjectDetails from "./components/Project/ProjectDetails"
+import AddProject from "./components/Project/AddProject"
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 const routes = [{
-    path: '/',
-    component: ProjectList
-  },
-  {
-    path: '/project/:id',
-    component: ProjectDetails
-  }
+  path: '/',
+  component: ProjectList
+},
+{
+  path: '/project/:id',
+  component: ProjectDetails
+},
+{
+  path: '/add-project',
+  component: AddProject
+}
 ]
 const router = new VueRouter({
   routes: routes,
