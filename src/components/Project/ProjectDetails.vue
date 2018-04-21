@@ -16,9 +16,7 @@ export default {
     };
   },
   beforeMount() {
-    const projSer = new ProjectService();
-    projSer
-      .getOneProject(this.$route.params.id)
+    ProjectService.getOneProject(this.$route.params.id)
       .then(data => (this.project = data.data))
       .catch(err => {
         throw err;

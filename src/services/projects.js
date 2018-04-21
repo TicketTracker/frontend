@@ -6,11 +6,14 @@ const requester = axios.create({
     'X-Custom-Header': 'foobar'
   }
 });
-export default class ProjectService {
+export default {
   getAllProjects() {
     return requester.get('/projects')
-  }
+  },
   getOneProject(id) {
     return requester.get(`/projects/${id}`)
+  },
+  createProject(payload) {
+    return requester.post('/projects', payload)
   }
 }

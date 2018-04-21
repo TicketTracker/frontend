@@ -1,9 +1,9 @@
 <template>
   <div class="projects">
     <div class="container">
+      <router-link :to="'/add-project'" class="btn btn-info" id="add-project" role="button">Add Project</router-link>
       <div class="header">
         <h3>All projects:</h3>
-        <router-link :to="'/add-project'" class="btn btn-info" id="add-project" role="button">Add Project</router-link>
       </div>
       <div class="list-group">
         <router-link v-for="p in projects" :key="p._id" :to="'/project/'+p._id" class="list-group-item list-group-item-action">
@@ -27,9 +27,7 @@ export default {
     };
   },
   beforeMount() {
-    const projSer = new ProjectService();
-    projSer
-      .getAllProjects()
+    ProjectService.getAllProjects()
       .then(data => (this.projects = data.data))
       .catch(err => {
         throw err;
