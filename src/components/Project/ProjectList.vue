@@ -6,7 +6,7 @@
         <h3>All projects:</h3>
       </div>
       <div class="list-group">
-        <router-link v-for="p in projects" :key="p._id" :to="'/project/'+p._id" class="list-group-item list-group-item-action">
+        <router-link v-for="p in projects" :key="p._id" :to="'/project/'+p._id+'/tickets'" class="list-group-item list-group-item-action">
           <div>
             <h4>{{p.name}}</h4>
             <p>{{p.description}}</p>
